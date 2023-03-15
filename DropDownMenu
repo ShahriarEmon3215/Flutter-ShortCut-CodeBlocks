@@ -1,0 +1,51 @@
+Demo One
+--------
+
+statusDropdown(
+      List entityValueList, label, dropDownValue, ReservationController controller) {
+    return DropdownButtonFormField(
+      // validator: (value) {
+      //   if (value == null) {
+      //     return "Please Select $label ";
+      //   } else {
+      //     return null;
+      //   }
+      // },
+     
+      onChanged: (value) async {
+        controller.timeSlotDropDownValue.value = value.toString();
+      },
+      isDense: true,
+      isExpanded: true,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        contentPadding: EdgeInsets.symmetric(horizontal: 10),
+        labelText: label,
+        // prefixIcon: Icon(
+        //   Icons.location_on,
+        // ),
+      ),
+      //value: dropdownStatusValue,
+      items: entityValueList.map((entityValue) {
+        return DropdownMenuItem(
+          value: entityValue,
+          child: Container(
+            margin: EdgeInsets.all(2),
+           // width: MediaQuery.of(context).size.width * 0.20,
+            child: Text(
+              entityValue,
+              style: TextStyle(fontSize: 17),
+              maxLines: 4,
+              softWrap: true,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        );
+      }).toList(),
+    );
+  }
+  
+  
+  
