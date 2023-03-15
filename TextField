@@ -1,0 +1,47 @@
+ Demo One
+ --------
+ 
+ TextFormField nameSimpleTextForm(
+      {required BuildContext context,
+      hint,
+      label,
+      icon,
+      textController = null,
+      intialvalue,
+      textInputType = null,
+      enable = true}) {
+    return TextFormField(
+      initialValue: intialvalue,
+      enabled: enable,
+      controller: textController,
+      keyboardType: textInputType,
+      decoration: InputDecoration(
+        hintText: hint,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        contentPadding: const EdgeInsets.all(0.0),
+        labelText: label,
+        prefixIcon: Icon(
+          icon,
+        ),
+      ),
+      onSaved: (value) {
+        // if (label == 'Amount') {
+        //   savetransactionItem.amount = int.tryParse(value!)!;
+        // }
+      },
+      validator: (value) {
+        if (value == null || value == '') {
+          return '$label can\'t be empty';
+        } else {
+          return null;
+        }
+      },
+    );
+  }
+  
+  
+  
+  
+  
