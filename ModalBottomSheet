@@ -1,0 +1,32 @@
+ await showModalBottomSheet(
+                            isScrollControlled: true,
+                            context: context,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(15),
+                                  topRight: Radius.circular(15)),
+                            ),
+                            builder: (context) {
+                              return StatefulBuilder(
+                                  builder: (context, setState) {
+                                return SingleChildScrollView(
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                        bottom: MediaQuery.of(context)
+                                            .viewInsets
+                                            .bottom),
+                                    child: Container(
+                                      height: 630,
+                                      padding: EdgeInsets.all(10),
+                                      child: Column(
+                                        children: [
+                                         
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              });
+                            },
+                          );
+
